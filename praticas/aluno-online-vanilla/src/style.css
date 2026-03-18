@@ -2,7 +2,7 @@
   --cor-fundo: #cfb7b7;
   --cor-texto: #303030;
   --cor-branco: #f5f3f3;
-  --cor-borda: #ffffff;
+  --cor-borda: #fff;
 }
 
 * {
@@ -103,7 +103,7 @@ body {
   list-style-position: inside;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .app-container {
     flex-direction: row;
   }
