@@ -100,7 +100,7 @@ body {
   list-style-position: inside;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   body { 
     flex-direction: row;
   }
