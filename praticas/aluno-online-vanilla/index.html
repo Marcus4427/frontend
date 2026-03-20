@@ -10,63 +10,57 @@
 
 <body>
 
-  <section class="app-container">
+  <aside class="sidebar">
+    <header class="sidebar-brand">
+      <img src="learn.svg" class="sidebar-icon" alt="Ícone Aluno Online">
+      <h2>Aluno Online</h2>
+    </header>
 
-    <aside class="sidebar">
-      <header class="sidebar-brand">
-        <img src="learn.svg" class="sidebar-icon" alt="Ícone Aluno Online">
-        <h2>Aluno Online</h2>
-      </header>
-      
-      <nav>
+    <nav>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Minhas Disciplinas</a></li>
+        <li><a href="#">Calendário</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <h1>Olá, Aluno!</h1>
+      <img src="public/avatar.svg" class="avatar" alt="Avatar do Aluno">
+    </header>
+
+    <section class="topbar-welcome">
+      <h2>Bem-vindo ao portal do aluno</h2>
+    </section>
+
+    <section class="dashboard-grid">
+
+      <article class="card">
+        <h2>Mural de Avisos</h2>
+        <p>Boleto vencendo amanhã.</p>
+      </article>
+
+      <article class="card">
+        <h2>Calendário Acadêmico</h2>
+        <p>Entrega da Prática 01: Hoje.</p>
+        <p>Entrega da Prática 02: Amanhã.</p>
+      </article>
+
+      <article class="card">
+        <h2>Minhas Disciplinas</h2>
         <ul>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Minhas Disciplinas</a></li>
-          <li><a href="#">Calendário</a></li>
+          <li>Desenvolvimento Front-end</li>
+          <li>Banco de Dados</li>
+          <li>Estrutura de Dados</li>
         </ul>
-      </nav>
-    </aside>
+      </article>
 
-    <main class="main-content">
-
-      <header class="topbar">
-        <h1>Olá, Aluno!</h1>
-        <img src="public/avatar.svg" class="avatar" alt="Avatar do Aluno">
-      </header>
-
-      <section class="topbar">
-        <h2>Bem-vindo ao portal do aluno</h2>
-      </section>
-
-      <section class="dashboard-grid">
-
-        <article class="card">
-          <h2>Mural de Avisos</h2>
-          <p>Boleto vencendo amanhã.</p>
-        </article>
-
-        <article class="card">
-          <h2>Calendário Acadêmico</h2>
-          <p>Entrega da Prática 01: Hoje.</p>
-          <p>Entrega da Prática 02: Amanhã.</p>
-        </article>
-
-        <article class="card">
-          <h2>Minhas Disciplinas</h2>
-          <ul>
-            <li>Desenvolvimento Front-end</li>
-            <li>Banco de Dados</li>
-            <li>Estrutura de Dados</li>
-          </ul>
-        </article>
-
-      </section>
-    </main>
-
-  </section>
+    </section>
+  </main>
 
 </body>
 
 </html>
-
-
