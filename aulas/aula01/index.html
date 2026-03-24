@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,12 +8,14 @@
   </head>
   <body>
     <main>
-      <img src="/book.svg" alt="icone livro">
+      <img src="/book.svg" alt="Logotipo da aplicação" />
       <h1>Aluno Online</h1>
-      <label for="matricula">Matrícula</label>
-      <input type="number" id="matricula" name="matricula">
+      <label for="matricula">Matricula</label>
+      <input type="number" id="matricula" name="matricula" />
+      <p id="matriculaErro"></p>
       <label for="senha">Senha</label>
-      <input type="password" id="senha" name="senha">
+      <input type="password" id="senha" name="senha" />
+      <p id="senhaErro"></p>
       <button type="submit">Entrar</button>
     </main>
     <script type="module" src="/src/main.js"></script>
