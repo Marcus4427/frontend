@@ -51,7 +51,7 @@ body {
   background-color: var(--cor-branco);
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
   border: 1px solid var(--cor-borda);
   width: 100%;
   max-width: 400px;
@@ -78,7 +78,7 @@ input {
 input:focus {
   outline: none;
   border-color: var(--cor-texto);
-  box-shadow: 0 0 0 2px rgba(48,48,48,0.2);
+  box-shadow: 0 0 0 2px rgb(48 48 48 / 20%);
 }
 
 button {
