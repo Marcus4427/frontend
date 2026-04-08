@@ -1,0 +1,62 @@
+.requerimentos-page {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.requerimentos-table-container {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.requerimentos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.requerimentos-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 15px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.requerimentos-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .requerimentos-page {
+    padding: 10px;
+  }
+
+  .requerimentos-table th, 
+  .requerimentos-table td {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+
+  .requerimentos-table th {
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .status-deferido {
+    color: #2e7d32;
+    font-weight: 600;
+  }
+
+  .status-indeferido {
+    color: #d32f2f;
+    font-weight: 600;
+  }
+}

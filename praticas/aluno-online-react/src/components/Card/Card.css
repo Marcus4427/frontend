@@ -1,0 +1,27 @@
+.card-mural {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-mural-header {
+  background-color: #f2f2f2;
+  padding: 12px 20px;
+}
+
+@media (max-width: 768px) {
+  .card-mural-header {
+    padding: 10px 15px;
+  }
+
+  .card-mural-header h1 {
+    font-size: 0.95rem;
+  }
+
+  .card-mural-list li {
+    padding: 12px 15px;
+    font-size: 0.85rem;
+  }
+}
