@@ -20,17 +20,14 @@ export default function Sidebar({ setPagina, paginaAtiva }) {
         <ul>
           {menus.map((m) => (
             <li key={m.id}>
-              <button 
-                className={paginaAtiva === m.id ? 'active' : ''} 
+              <button
+                className={paginaAtiva === m.id ? 'active' : ''}
                 onClick={() => setPagina(m.id)}
               >
                 • {m.label}
               </button>
             </li>
           ))}
-          <li className="logout-item">
-            <button className="logout-btn">• Sair</button>
-          </li>
         </ul>
       </nav>
     </aside>

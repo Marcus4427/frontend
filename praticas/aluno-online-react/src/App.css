@@ -9,14 +9,30 @@
   background-color: #fff;
 }
 
+.page-padding {
+  padding: 0 40px 40px 40px;
+}
+
+.page-info h3 {
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
 @media (max-width: 768px) {
   .app-container {
     display: block;
   }
-
-  .main-content {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  .page-padding {
+    padding: 0 20px 20px 20px;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
   }
 }

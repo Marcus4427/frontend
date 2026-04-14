@@ -1,16 +1,14 @@
 import './Card.css';
 
-export default function Card() {
+export default function Card({ titulo, children }) {
   return (
-    <article className="card-mural">
-      <header className="card-mural-header">
-        <h1>Mural de Avisos</h1>
+    <article className="info-card">
+      <header className="info-card-header">
+        <h3>{titulo}</h3>
       </header>
-      <ul className="card-mural-list">
-        <li>Eleição para representantes de turma</li>
-        <li>Prazo para renovação de bolsa encerrando</li>
-        <li>Palestra sobre Carreira em TI na sexta-feira</li>
-      </ul>
+      <section className="info-card-content">
+        {children}
+      </section>
     </article>
   );
 }

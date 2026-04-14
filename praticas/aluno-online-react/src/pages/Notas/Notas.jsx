@@ -1,32 +1,22 @@
-import Header from '../../components/Header/Header';
-import './Notas.css';
+import Layout from "../Layout";
+import Tabela from "../../components/Tabela/Tabela";
 
-export default function Notas() {
+export default function Notas({ setPagina, paginaAtiva }) {
+  const colunas = ["Disciplina", "A1", "A2", "A3", "Menção"];
+  const dados = [
+    { nome: "BI e Data Warehousing", a1: "-", a2: "-", a3: "-", mencao: "SR" },
+    { nome: "Construção de Frontend", a1: "-", a2: "-", a3: "-", mencao: "SR" },
+    { nome: "Manutenção de Software e Devops", a1: "-", a2: "-", a3: "-", mencao: "SR" }
+  ];
+
   return (
-    <article className="notas-page">
-      <Header title="Minhas Notas" />
-      <header className="page-info">
-        <h3>Histórico de Notas por Semestre</h3>
-      </header>
-
-      <section className="semester-block">
-        <header className="semester-header"><h4>2026.1</h4></header>
-        <section className="table-responsive">
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>Disciplina</th>
-                <th>A1</th><th>A2</th><th>A3</th><th>Menção</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>BI e Data Warehousing</td><td>-</td><td>-</td><td>-</td><td>SR</td></tr>
-              <tr><td>Construção de Frontend</td><td>-</td><td>-</td><td>-</td><td>SR</td></tr>
-              <tr><td>Manutenção de Software e Devops</td><td>-</td><td>-</td><td>-</td><td>SR</td></tr>
-            </tbody>
-          </table>
-        </section>
-      </section>
-    </article>
+    <Layout 
+      titulo="Minhas Notas" 
+      subtitulo="Histórico de Notas por Semestre"
+      setPagina={setPagina}
+      paginaAtiva={paginaAtiva}
+    >
+      <Tabela colunas={colunas} dados={dados} />
+    </Layout>
   );
 }

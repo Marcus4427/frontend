@@ -1,27 +1,37 @@
-.card-mural {
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
+.info-card {
+  background: white;
   border-radius: 8px;
+  border: 1px solid #e0e0e0;
   overflow: hidden;
   width: 100%;
 }
 
-.card-mural-header {
-  background-color: #f2f2f2;
+.info-card-header {
+  background: #f2f2f2;
   padding: 12px 20px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-@media (max-width: 768px) {
-  .card-mural-header {
-    padding: 10px 15px;
-  }
+.info-card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
 
-  .card-mural-header h1 {
-    font-size: 0.95rem;
-  }
+.info-card-content {
+  padding: 20px;
+}
 
-  .card-mural-list li {
-    padding: 12px 15px;
-    font-size: 0.85rem;
-  }
+.info-card-content ul {
+  padding-left: 20px;
+}
+
+.info-card-content dl {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 10px 0;
+}
+
+.info-card-content dt {
+  font-weight: bold;
 }

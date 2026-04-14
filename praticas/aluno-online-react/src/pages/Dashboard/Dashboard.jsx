@@ -1,32 +1,27 @@
-import Header from '../../components/Header/Header';
-import './Dashboard.css';
+import Layout from "../Layout";
+import Card from "../../components/Card/Card";
 
-export default function Dashboard() {
+export default function Dashboard({ setPagina, paginaAtiva }) {
   return (
-    <section className="dashboard-page">
-      <Header title="Olá, Aluno!" />
-      <article className="welcome-banner">
-        <p>Bem-vindo ao portal do aluno</p>
-      </article>
-
+    <Layout 
+      titulo="Olá, Aluno!" 
+      subtitulo="Bem-vindo ao portal do aluno"
+      setPagina={setPagina}
+      paginaAtiva={paginaAtiva}
+    >
       <section className="dashboard-grid">
-        <article className="info-card">
-          <h3>Mural de Avisos</h3>
+        <Card titulo="Mural de Avisos">
           <ul>
-            <li>Inscrição para o projeto de extensão</li>
-            <li>Eleição para representante de turma</li>
+            <li>Eleição para representantes de turma</li>
+            <li>Prazo para renovação de bolsa encerrando</li>
           </ul>
-        </article>
-
-        <article className="info-card">
-          <h3>Calendário Acadêmico</h3>
+        </Card>
+        <Card titulo="Calendário Acadêmico">
           <dl>
             <dt>23/02</dt><dd>Início do período letivo 2026-1</dd>
-            <dt>25/04</dt><dd>Prazo final para aplicação da P1</dd>
-            <dt>04/07</dt><dd>Fim do período letivo 2026-1</dd>
           </dl>
-        </article>
+        </Card>
       </section>
-    </section>
+    </Layout>
   );
 }
