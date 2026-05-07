@@ -1,7 +1,6 @@
-import Layout from "../Layout";
 import Tabela from "../../components/Tabela/Tabela";
 
-export default function Faltas({ setPagina, paginaAtiva }) {
+export default function Faltas() {
   const colunas = ["Disciplina", "Total de Faltas", "% de Presença"];
   const dados = [
     { nome: 'BI e Data Warehousing', total: 0, presenca: '100%' },
@@ -10,13 +9,10 @@ export default function Faltas({ setPagina, paginaAtiva }) {
   ];
 
   return (
-    <Layout 
-      titulo="Minhas Faltas" 
-      subtitulo="Histórico de Faltas por Semestre"
-      setPagina={setPagina}
-      paginaAtiva={paginaAtiva}
-    >
+    <>
+      <h1>Minhas Faltas</h1>
+      <p>Histórico de Faltas por Semestre</p>
       <Tabela colunas={colunas} dados={dados} />
-    </Layout>
+    </>
   );
 }

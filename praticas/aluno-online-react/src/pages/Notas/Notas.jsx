@@ -1,7 +1,6 @@
-import Layout from "../Layout";
 import Tabela from "../../components/Tabela/Tabela";
 
-export default function Notas({ setPagina, paginaAtiva }) {
+export default function Notas() {
   const colunas = ["Disciplina", "A1", "A2", "A3", "Menção"];
   const dados = [
     { nome: "BI e Data Warehousing", a1: "-", a2: "-", a3: "-", mencao: "SR" },
@@ -10,13 +9,10 @@ export default function Notas({ setPagina, paginaAtiva }) {
   ];
 
   return (
-    <Layout 
-      titulo="Minhas Notas" 
-      subtitulo="Histórico de Notas por Semestre"
-      setPagina={setPagina}
-      paginaAtiva={paginaAtiva}
-    >
+    <>
+      <h1>Minhas Notas</h1>
+      <p>Histórico de Notas por Semestre</p>
       <Tabela colunas={colunas} dados={dados} />
-    </Layout>
+    </>
   );
 }

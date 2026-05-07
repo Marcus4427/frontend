@@ -1,14 +1,10 @@
-import Layout from "../Layout";
 import Card from "../../components/Card/Card";
 
-export default function Dashboard({ setPagina, paginaAtiva }) {
+export default function Dashboard() {
   return (
-    <Layout 
-      titulo="Olá, Aluno!" 
-      subtitulo="Bem-vindo ao portal do aluno"
-      setPagina={setPagina}
-      paginaAtiva={paginaAtiva}
-    >
+    <>
+      <h1>Olá, Aluno!</h1>
+      <p>Bem-vindo ao portal do aluno</p>
       <section className="dashboard-grid">
         <Card titulo="Mural de Avisos">
           <ul>
@@ -22,6 +18,6 @@ export default function Dashboard({ setPagina, paginaAtiva }) {
           </dl>
         </Card>
       </section>
-    </Layout>
+    </>
   );
 }

@@ -1,13 +1,14 @@
+import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 import learnLogo from '../../assets/learn.svg';
 
-export default function Sidebar({ setPagina, paginaAtiva }) {
+export default function Sidebar() {
   const menus = [
-    { id: 'dashboard', label: 'Dashboard' },
-    { id: 'notas', label: 'Notas' },
-    { id: 'faltas', label: 'Faltas' },
-    { id: 'boletos', label: 'Boletos' },
-    { id: 'requerimentos', label: 'Requerimentos' },
+    { path: '/', label: 'Dashboard' },
+    { path: '/notas', label: 'Notas' },
+    { path: '/faltas', label: 'Faltas' },
+    { path: '/boletos', label: 'Boletos' },
+    { path: '/requerimentos', label: 'Requerimentos' },
   ];
 
   return (
@@ -19,13 +20,14 @@ export default function Sidebar({ setPagina, paginaAtiva }) {
       <nav className="sidebar-nav">
         <ul>
           {menus.map((m) => (
-            <li key={m.id}>
-              <button
-                className={paginaAtiva === m.id ? 'active' : ''}
-                onClick={() => setPagina(m.id)}
+            <li key={m.path}>
+              <NavLink
+                to={m.path}
+                className={({ isActive }) => isActive ? 'active' : ''}
+                end={m.path === '/'}
               >
                 • {m.label}
-              </button>
+              </NavLink>
             </li>
           ))}
         </ul>
