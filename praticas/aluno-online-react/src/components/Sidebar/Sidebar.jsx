@@ -3,12 +3,14 @@ import learnLogo from '../../assets/learn.svg';
 
 export default function Sidebar({ setPagina, paginaAtiva }) {
   const menus = [
-    { id: 'dashboard', label: 'Dashboard' },
-    { id: 'notas', label: 'Notas' },
-    { id: 'faltas', label: 'Faltas' },
-    { id: 'boletos', label: 'Boletos' },
-    { id: 'requerimentos', label: 'Requerimentos' },
+    { id: 'dashboard', label: 'Dashboard', route: null },
+    { id: 'notas', label: 'Notas', route: null },
+    { id: 'faltas', label: 'Faltas', route: null },
+    { id: 'boletos', label: 'Boletos', route: null },
+    { id: 'requerimentos', label: 'Requerimentos', route: null },
+    { id: 'login', label: 'Login', route: '/login' },
   ];
+
 
   return (
     <aside className="sidebar-container">
@@ -22,11 +24,18 @@ export default function Sidebar({ setPagina, paginaAtiva }) {
             <li key={m.id}>
               <button
                 className={paginaAtiva === m.id ? 'active' : ''}
-                onClick={() => setPagina(m.id)}
+                onClick={() => {
+                  if (m.route) {
+                    window.location.pathname = m.route;
+                    return;
+                  }
+                  setPagina(m.id);
+                }}
               >
                 • {m.label}
               </button>
             </li>
+
           ))}
         </ul>
       </nav>

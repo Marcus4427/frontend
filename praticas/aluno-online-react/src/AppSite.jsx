@@ -4,7 +4,9 @@ import Notas from './pages/Notas/Notas';
 import Faltas from './pages/Faltas/Faltas';
 import Boletos from './pages/Boletos/Boletos';
 import Requerimentos from './pages/Requerimentos/Requerimentos';
+import Login from './pages/Login/Login';
 import './App.css';
+
 
 export default function App() {
   const [paginaAtiva, setPaginaAtiva] = useState('dashboard');
