@@ -1,19 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import AppSite from './AppSite';
 import Login from './pages/Login/Login';
+import { useAuth } from './contexts/useAuth.js';
+
 
 export default function Router() {
-  const [path, setPath] = useState(() => window.location.pathname);
+  const { autenticado } = useAuth();
 
   useEffect(() => {
-    const onPopState = () => setPath(window.location.pathname);
+    const onPopState = () => {
+      window.location.reload();
+    };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
-  if (path === '/login') return <Login />;
+
+  if (!autenticado) {
+    return <Login />;
+  }
 
   return <AppSite />;
 }
+
+
 

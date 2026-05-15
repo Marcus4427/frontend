@@ -2,10 +2,13 @@ import { useState } from 'react';
 
 import EmailInput from '../../components/Login/EmailInput/EmailInput';
 import PasswordInput from '../../components/Login/PasswordInput/PasswordInput';
+import { useAuth } from '../../contexts/useAuth.js';
+
 
 import './Login.css';
 
 export default function Login() {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -44,15 +47,24 @@ export default function Login() {
     return valido;
   };
 
+  const { login } = useAuth();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const valido = validarDados();
     if (!valido) return;
 
-    // TODO: implementar integração/autenticação
-    console.log('Login válido:', { email: email.trim(), password });
+    login({
+      email: email.trim(),
+    });
+
+    // Aguarda um pequeno delay para o estado atualizar
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 100);
   };
+
 
   return (
     <main className="login-container">

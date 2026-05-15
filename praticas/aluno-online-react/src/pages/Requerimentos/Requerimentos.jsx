@@ -1,7 +1,7 @@
 import Layout from "../Layout";
 import Tabela from "../../components/Tabela/Tabela";
 
-export default function Requerimentos({ setPagina, paginaAtiva }) {
+export default function Requerimentos() {
   const colunas = ["Tipo de Requerimento", "Data de Solicitação", "Situação"];
   const dados = [
     { tipo: "Revisão de Menção", data: "15/12/2025", status: "Indeferido" },
@@ -11,10 +11,7 @@ export default function Requerimentos({ setPagina, paginaAtiva }) {
 
   return (
     <Layout 
-      titulo="Meus Requerimentos" 
       subtitulo="Faça solicitações online para a secretaria"
-      setPagina={setPagina}
-      paginaAtiva={paginaAtiva}
     >
       <Tabela colunas={colunas} dados={dados} />
     </Layout>
