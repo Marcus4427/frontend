@@ -1,7 +1,7 @@
 import Layout from "../Layout";
 import Tabela from "../../components/Tabela/Tabela";
 
-export default function Boletos({ setPagina, paginaAtiva }) {
+export default function Boletos() {
   const colunas = ["Vencimento", "Valor R$", "Situação"];
   const dados = [
     { venc: "19/01/2026", valor: "500,00", status: "Pago" },
@@ -11,10 +11,7 @@ export default function Boletos({ setPagina, paginaAtiva }) {
 
   return (
     <Layout 
-      titulo="Meus Boletos" 
       subtitulo="Histórico de Pagamentos"
-      setPagina={setPagina}
-      paginaAtiva={paginaAtiva}
     >
       <Tabela colunas={colunas} dados={dados} />
     </Layout>

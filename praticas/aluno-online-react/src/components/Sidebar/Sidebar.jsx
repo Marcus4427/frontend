@@ -1,16 +1,19 @@
 import './Sidebar.css';
 import learnLogo from '../../assets/learn.svg';
+import { useAuth } from '../../contexts/useAuth.js';
+
 
 export default function Sidebar({ setPagina, paginaAtiva }) {
+  const { logout } = useAuth();
+
   const menus = [
     { id: 'dashboard', label: 'Dashboard', route: null },
     { id: 'notas', label: 'Notas', route: null },
     { id: 'faltas', label: 'Faltas', route: null },
     { id: 'boletos', label: 'Boletos', route: null },
     { id: 'requerimentos', label: 'Requerimentos', route: null },
-    { id: 'login', label: 'Login', route: '/login' },
+    { id: 'logout', label: 'Sair', route: null },
   ];
-
 
   return (
     <aside className="sidebar-container">
@@ -25,20 +28,22 @@ export default function Sidebar({ setPagina, paginaAtiva }) {
               <button
                 className={paginaAtiva === m.id ? 'active' : ''}
                 onClick={() => {
-                  if (m.route) {
-                    window.location.pathname = m.route;
+                  if (m.id === 'logout') {
+                    logout();
+                    window.location.pathname = '/login';
                     return;
                   }
+
                   setPagina(m.id);
                 }}
               >
                 • {m.label}
               </button>
             </li>
-
           ))}
         </ul>
       </nav>
     </aside>
   );
 }
+
