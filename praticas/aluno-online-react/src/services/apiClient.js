@@ -15,7 +15,6 @@ function getAuthToken() {
 
 async function request(path, options = {}) {
   const headers = { ...(options.headers || {}) };
-  // ensure content-type for JSON requests unless explicitly overridden
   if (!headers['Content-Type'] && !(options.body instanceof FormData)) {
     headers['Content-Type'] = DEFAULT_HEADERS['Content-Type'];
   }
@@ -26,7 +25,6 @@ async function request(path, options = {}) {
   const resp = await fetch(path, { ...options, headers });
 
   if (resp.status === 401) {
-    // clear auth and notify app to perform logout+redirect
     localStorage.removeItem('auth');
     window.dispatchEvent(new Event('app:unauthorized'));
     const err = new Error('Unauthorized');

@@ -4,11 +4,23 @@ const API_USERS = 'http://localhost:3000/usuarios';
 
 function gerarTokenBase64(email) {
   const payload = `${email}:${Date.now()}`;
-  try {
-    return btoa(payload);
-  } catch {
-    return Buffer.from(payload).toString('base64');
+  if (typeof btoa === 'function') {
+    try {
+      return btoa(payload);
+    } catch {
+      try {
+        return btoa(unescape(encodeURIComponent(payload)));
+      } catch {
+        return encodeURIComponent(payload);
+      }
+    }
   }
+
+  if (typeof globalThis !== 'undefined' && typeof globalThis.Buffer !== 'undefined' && typeof globalThis.Buffer.from === 'function') {
+    return globalThis.Buffer.from(payload).toString('base64');
+  }
+
+  return encodeURIComponent(payload);
 }
 
 export async function login(email, senha) {
@@ -21,7 +33,6 @@ export async function login(email, senha) {
     throw err;
   }
 
-  // senha armazenada em texto no db.json para esta prática
   if (user.senha !== senha) {
     const err = new Error('Credenciais inválidas');
     err.status = 401;
